@@ -73,7 +73,7 @@
         class="rounded-circle img-thumbnail"
       />
       <h1 class="display-4">Aji Prakoso</h1>
-      <p class="lead fs-5">Junior FrontEnd Developer | Calon Mahasiswa ITB</p>
+      <p class="lead fs-5"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#e7f6f2"
@@ -197,7 +197,7 @@
           <div class="col-md-4 mb-3">
             <div
               class="card"
-              data-aos="flip-right"
+              data-aos="flip-left"
               data-aos-delay="300"
               data-aos-duration="500"
             >
@@ -213,7 +213,7 @@
           <div class="col-md-4 mb-3">
             <div 
               class="card"
-              data-aos="flip-right"
+              data-aos="flip-left"
               data-aos-delay="400"
               data-aos-duration="500"
             >
@@ -330,7 +330,11 @@
     <section id="contact">
       <div class="container">
         <div class="row text-center mb-3">
-          <div class="col">
+          <div 
+            class="col"
+            data-aos="fade-in"
+            data-aos-duration="1000" 
+          >
             <h2>Contact Me</h2>
           </div>
         </div>
@@ -349,7 +353,11 @@
               ></button>
             </div>
             <form name="contact-form-portfolio">
-              <div class="mb-3">
+              <div 
+                class="mb-3"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+              >
                 <label for="name" class="form-label">Nama Lengkap</label>
                 <input
                   type="text"
@@ -367,7 +375,11 @@
                   name="email"
                 />
               </div>
-              <div class="mb-3">
+              <div
+                class="mb-3"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+              >
                 <label for="pesan" class="form-label">Pesan</label>
                 <textarea
                   class="form-control"
@@ -422,12 +434,42 @@
     </footer>
     <!-- akhir footer -->
 
+    <!-- bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
 
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const galleryImage = document.querySelectorAll('.gallery-img');
+
+      galleryImage.forEach( (img, i) => {
+        img.dataset.aos = 'fade-down';
+        img.dataset.aosDelay = i * 100;
+        img.dataset.aosDuration = 1000;
+      });
+
+      AOS.init({
+        once: true,
+        duration: 2000,
+      });
+    </script>
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', {duration: 2, delay: 1.5, text:'Junior FrontEnd Engineer | Calon Mahasiswa ITB ' });
+      gsap.from('.jumbotron img', {duration: 1, rotateY: 360, opacity: 0 });
+      gsap.from('.navbar', {duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
+      gsap.from('.display-4', {duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
+    </script>
+
+    <!-- javascript form g.sheet -->
     <script>
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbz8XX8hut6pMpBIKPDiM_gzkJqq3xZ7HI0gzwRpDToS8QGEKeJ5tBqn4JoDX_hTiU12bQ/exec";
@@ -456,20 +498,6 @@
           .catch((error) => console.error("Error!", error.message));
       });
     </script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      const galleryImage = document.querySelectorAll('.gallery-img');
 
-      galleryImage.forEach( (img, i) => {
-        img.dataset.aos = 'fade-down';
-        img.dataset.aosDelay = i * 100;
-        img.dataset.aosDuration = 1000;
-      });
-
-      AOS.init({
-        once: true,
-        duration: 2000,
-      });
-    </script>
   </body>
 </html>
