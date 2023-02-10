@@ -21,3 +21,92 @@ section {
 #gallery .row > * {
   padding: 0;
 }
+
+/* My liquid */
+.liquid-box {
+  position: relative;
+  background-color: #395b64;
+  border-radius: 10px;
+  height: 500px;
+}
+
+.liquid-box::before {
+  content: 'SALTNIC';
+  position: absolute;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  font-style: italic;
+  top: 30px;
+  left: -100px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.liquid-box:hover::before {
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0.2;
+}
+
+.liquid-box::after {
+  content: '3MG';
+  position: absolute;
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-style: italic;
+  top: 360px;
+  left: 450px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.liquid-box:hover::after {
+  left: 70%;
+  transform: translate(-70%, 0);
+  opacity: 0.2;
+}
+
+.liquid-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.liquid-box:hover .liquid-name {
+  top: 10px;
+  opacity: 1;
+}
+
+.liquid-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.liquid-box:hover .liquid-detail-button {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.liquid-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 440px;
+  transition: 0.5s;
+}
+
+.liquid-box:hover .liquid-img {
+  transform: translate(-50%, -50%) rotate(15deg) scale(1.2);
+}
