@@ -233,24 +233,39 @@
       </div>
 
       <!-- tilt js -->
-      <section id="my-liquids">
+      <section id="liquids">
         <div class="container">
           <div class="row text-center mb-3">
             <div class="col">
               <h2>My Liquids</h2>
             </div>
-          </div>
+          </div> 
           <div class="row">
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div class="col-md-6 col-lg-4">
               <div class="liquid-box">
-                <h4 class="liquid-name">Liquid X</h4>
-                <img src="img/images/liquid1.png" alt="liquid1" class="liquid-img">
-                <a href="" class="btn btn-light liquid-detail-button">Show details</a>
+                <h4 class="liquid-name">Guava</h4>
+                <img src="img/liquidbox/liquid1.png" alt="liquid1" class="liquid-img">
+                <a href="#" class="btn btn-light liquid-detail-button">Show detail</a>
               </div>
             </div>
-          </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="liquid-box">
+                <h4 class="liquid-name">Apple</h4>
+                <img src="img/liquidbox/liquid2.png" alt="liquid2" class="liquid-img">
+                <a href="#" class="btn btn-light liquid-detail-button">Show detail</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="liquid-box">
+                <h4 class="liquid-name">Mango</h4>
+                <img src="img/liquidbox/liquid3.png" alt="liquid3" class="liquid-img">
+                <a href="#" class="btn btn-light liquid-detail-button">Show detail</a>
+              </div>
+            </div>
+          </div>    
         </div>
       </section>
+
 
       <!-- akhir tilt js -->
 
@@ -522,6 +537,14 @@
             console.log("Success!", response);
           })
           .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".liquid-box"), {
+        max: 25,
+        speed: 400
       });
     </script>
 

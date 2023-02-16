@@ -22,49 +22,49 @@ section {
   padding: 0;
 }
 
-/* My liquid */
+/* Liquid section */
+
 .liquid-box {
-  position: relative;
   background-color: #395b64;
+  position: relative;
   border-radius: 10px;
   height: 500px;
+  transform-style: preserve-3d;
 }
 
 .liquid-box::before {
-  content: 'SALTNIC';
+  content: 'Saltnic';
   position: absolute;
   color: #fff;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: bold;
   font-style: italic;
-  top: 30px;
-  left: -100px;
+  top: 38px;
+  left: 50%;
+  transform: translate( -50%, 0);
   opacity: 0;
   transition: 0.5s;
 }
 
 .liquid-box:hover::before {
-  left: 50%;
-  transform: translate(-50%, 0);
   opacity: 0.2;
 }
 
 .liquid-box::after {
-  content: '3MG';
+  content: '48mg';
   position: absolute;
   color: #fff;
   font-size: 2.5em;
   font-weight: bold;
   font-style: italic;
-  top: 360px;
-  left: 450px;
+  top: 380px;
+  left: 50%;
+  transform: translate(-50%, 0);
   opacity: 0;
   transition: 0.5s;
 }
 
 .liquid-box:hover::after {
-  left: 70%;
-  transform: translate(-70%, 0);
   opacity: 0.2;
 }
 
@@ -76,11 +76,12 @@ section {
   text-align: center;
   font-size: 2em;
   opacity: 0;
+  transform: translate3d(0,0,50px);
   transition: 0.5s;
 }
 
 .liquid-box:hover .liquid-name {
-  top: 10px;
+  top: 18px;
   opacity: 1;
 }
 
@@ -88,25 +89,26 @@ section {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate3d(-50%, 0, 100px);
   opacity: 0;
   transition: 0.5s;
 }
 
-.liquid-box:hover .liquid-detail-button {
+.liquid-box:hover .liquid-detail-button{
   opacity: 1;
   bottom: 20px;
 }
 
 .liquid-img {
   position: absolute;
-  top: 50%;
+  top: 51%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 440px;
+  transform: translate3d(-50%, -51%, 90px);
+  max-width: 350px;
   transition: 0.5s;
+  z-index: 10;
 }
 
 .liquid-box:hover .liquid-img {
-  transform: translate(-50%, -50%) rotate(15deg) scale(1.2);
+  transform: translate3d(-50%, -50%,90px) rotate(5deg) scale(1.2);
 }
